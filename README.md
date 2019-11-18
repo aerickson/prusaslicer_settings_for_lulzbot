@@ -8,4 +8,5 @@ similar to https://github.com/sn4k3/Ender3, but for Lulzbots
 
 ## links
 
-https://github.com/prusa3d/PrusaSlicer/wiki/Slic3r-Prusa-Edition-Macro-Language
+- https://github.com/prusa3d/PrusaSlicer/wiki/Slic3r-Prusa-Edition-Macro-Language
+- lulzbot taz prusaslicer configs: https://github.com/realraum/3dprinting
