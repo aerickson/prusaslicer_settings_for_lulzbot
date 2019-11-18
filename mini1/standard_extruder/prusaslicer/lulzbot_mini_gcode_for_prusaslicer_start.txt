@@ -80,7 +80,7 @@ G0 Y152 F4000 ; move in front of wiper pad
 G4 S1 ; pause
 M400 ; wait for moves to finish
 M117 Heating... ; progress indicator message on LCD
-M109 R{temperature}  ; wait for extruder to reach printing temp
-M190 R{bed_temperature} ; wait for bed to reach printing temp
+M109 R{first_layer_temperature}  ; wait for extruder to reach printing temp
+M190 R{first_layer_bed_temperature} ; wait for bed to reach printing temp
 G1 Z2 E0 F75 ; prime tiny bit of filament into the nozzle
 M117 Mini Printing... ; progress indicator message on LCD
