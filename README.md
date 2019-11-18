@@ -2,6 +2,10 @@
 
 similar to https://github.com/sn4k3/Ender3, but for Lulzbots
 
+## directions
+
+To install the bed model, follow steps at https://github.com/sn4k3/Ender3.
+
 ## credits
 
 - mini bed: https://www.thingiverse.com/thing:940638
