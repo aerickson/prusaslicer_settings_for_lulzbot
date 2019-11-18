@@ -4,13 +4,13 @@
 ; material: print/probe/soften/wipe bed:print/removal
 ; abs: 240/170/175/170 110/50
 ;
-; prusaslicer only has: {temperature} and {bed_temperature}
-;        {first_layer_temperature} and {first_layer_bed_temperature}
+; prusaslicer only has: [temperature] and [bed_temperature]
+;        [first_layer_temperature] and [first_layer_bed_temperature]
 ; 
-; probe: {temperature-70} 
-; soften: {temperature-65}
-; wipe: {temperature-70} 
-; removal: {bed_temperature-60}
+; probe: [temperature-70] 
+; soften: [temperature-65]
+; wipe: [temperature-70] 
+; removal: [bed_temperature-60]
 
 M73 P0 ; clear GLCD progress bar
 M75 ; Start GLCD Timer
@@ -20,12 +20,12 @@ M420 S0 ; disable leveling matrix
 G90 ; absolute positioning
 M82 ; set extruder to absolute mode
 G92 E0 ; set extruder position to 0
-M140 S{bed_temperature} ; start bed heating up
+M140 S[bed_temperature] ; start bed heating up
 G28 ; home all axes
 G0 X0 Y187 Z156 F200 ; move away from endstops
-M109 R{temperature-65} ;
+M109 R[temperature-65] ;
 G1 E-30 F75 ; retract filament
-M109 R{temperature-70} ; wait for extruder to reach wiping temp
+M109 R[temperature-70] ; wait for extruder to reach wiping temp
 G1 X45 Y173 F11520 ; move above wiper pad
 G1 Z0 F1200 ; push nozzle into wiper
 G1 X42 Y173 Z-.5 F4000             ; wiping
@@ -67,7 +67,7 @@ G1 X49 Y181.5 F2000 ; -- wipe off lint
 G1 Z10 ; raise extruder
 G28 X0 Y0 ; home X and Y
 G0 X0 Y187 F200 ; move away from endstops
-M109 R{temperature-70} ; wait for extruder to reach probe temp
+M109 R[temperature-70] ; wait for extruder to reach probe temp
 M204 S300 ; set probing acceleration
 G29       ; start auto-leveling sequence
 M420 S1   ; enable leveling matrix
@@ -80,7 +80,7 @@ G0 Y152 F4000 ; move in front of wiper pad
 G4 S1 ; pause
 M400 ; wait for moves to finish
 M117 Heating... ; progress indicator message on LCD
-M109 R{first_layer_temperature}  ; wait for extruder to reach printing temp
-M190 R{first_layer_bed_temperature} ; wait for bed to reach printing temp
+M109 R[first_layer_temperature]  ; wait for extruder to reach printing temp
+M190 R[first_layer_bed_temperature] ; wait for bed to reach printing temp
 G1 Z2 E0 F75 ; prime tiny bit of filament into the nozzle
 M117 Mini Printing... ; progress indicator message on LCD
