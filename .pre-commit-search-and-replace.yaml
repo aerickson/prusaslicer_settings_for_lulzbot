@@ -1,0 +1,2 @@
+- search: /^printhost_apikey = [\w\d]*/
+  replacement: "printhost_apikey = REDACTED"
