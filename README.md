@@ -2,6 +2,10 @@
 
 similar to https://github.com/sn4k3/Ender3, but for Lulzbots
 
+## current status
+
+This is working for me on my Lulzbot Mini v1. I use it instead of Cura currently.
+
 ## directions
 
 To install the bed model, follow steps at https://github.com/sn4k3/Ender3.
