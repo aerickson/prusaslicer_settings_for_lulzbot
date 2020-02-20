@@ -1,4 +1,5 @@
-- repo: https://github.com/mattlqx/pre-commit-search-and-replace
-  rev: v1.0.2
+repos:
+- repo: https://github.com/aerickson/pre-commit-search-and-replace
+  rev: 7a55649c7d37fc82e2ec82c15507c05215257c12
   hooks:
   - id: search-and-replace
