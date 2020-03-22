@@ -18,3 +18,5 @@ To install the bed model, follow steps at https://github.com/sn4k3/Ender3.
 
 - https://github.com/prusa3d/PrusaSlicer/wiki/Slic3r-Prusa-Edition-Macro-Language
 - lulzbot taz prusaslicer configs: https://github.com/realraum/3dprinting
+- taz and mini profiles: https://github.com/jjaeggli/prusaslicer-lulzbot-taz
+  - has formula-based wipe temperatures
