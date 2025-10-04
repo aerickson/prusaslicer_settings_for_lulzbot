@@ -12,6 +12,7 @@ to use this.
 
 New wiper that uses Bambu A1 nozzle wiper pads https://us.store.bambulab.com/products/heatbed-nozzle-wiper-a1
 - https://www.printables.com/model/1417879-better-lulzbot-mini-wiper-bracket
+  - TODO: update bed STL with new wiper??
 
 ## directions
 
