@@ -6,6 +6,10 @@ similar to https://github.com/sn4k3/Ender3, but for Lulzbots
 
 This is working for me on my Lulzbot Mini v1. I use it instead of Cura currently.
 
+I do have a different wiper installed on my Mini
+(https://www.thingiverse.com/thing:1976831), so the note that if you're looking
+to use this.
+
 ## directions
 
 To install the bed model, follow steps at https://github.com/sn4k3/Ender3.
