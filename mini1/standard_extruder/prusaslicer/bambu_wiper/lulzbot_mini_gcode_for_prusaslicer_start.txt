@@ -27,45 +27,54 @@ M109 R{temperature[0]-65} ;
 G1 E-30 F75 ; retract filament
 M109 R{temperature[0]-70} ; wait for extruder to reach wiping temp
 ;;;;;;;;;;;;;;;;; AJE
-G1 X45 Y173 F11520 ; move above wiper pad
-G1 Z0 F1200 ; push nozzle into wiper
-G1 X42 Y173 Z-.5 F4000             ; wiping
-G1 X52 Y171 Z-.5 F4000             ; wiping
-G1 X42 Y173 Z0 F4000               ; wiping
-G1 X52 Y171 F4000                  ; wiping
-G1 X42 Y173 F4000                  ; wiping
-G1 X52 Y171 F4000                  ; wiping
-G1 X42 Y173 F4000                  ; wiping
-G1 X52 Y171 F4000                  ; wiping
-G1 X57 Y173 F4000                  ; wiping
-G1 X77 Y171 F4000                  ; wiping
-G1 X57 Y173 F4000                  ; wiping
-G1 X77 Y171 F4000                  ; wiping
-G1 X57 Y173 F4000                  ; wiping
-G1 X87 Y171 F4000                  ; wiping
-G1 X77 Y173 F4000                  ; wiping
-G1 X97 Y171 F4000                  ; wiping
-G1 X77 Y173 F4000                  ; wiping
-G1 X97 Y171 F4000                  ; wiping
-G1 X77 Y173 F4000                  ; wiping
-G1 X97 Y171 F4000                  ; wiping
-G1 X107 Y173 F4000                 ; wiping
-G1 X97 Y171 F4000                  ; wiping
-G1 X107 Y173 F4000                 ; wiping
-G1 X97 Y171 F4000                  ; wiping
-G1 X107 Y173 F4000                 ; wiping
-G1 X112 Y171 Z-0.5 F1000           ; wiping
-G1 Z4 ; -- raise z prepare for move to secondary wiper
-G1 X105 Y181 ; -- right end of secondary wiper
-G1 Z1 ; -- Move down to pad
-G1 X85 Y181.5 F4000 ; -- wipe off lint
-G1 X105 Y181 F4000 ; -- wipe off lint
-G1 X65 Y181.5 F4000 ; -- wipe off lint
-G1 X85 Y181 Z0.5 F4000 ; -- wipe off lint
-G1 X49 Y181.5 F3000 ; -- wipe off lint
-G1 X69 Y181 F3000 ; -- wipe off lint
-G1 X49 Y181.5 F2000 ; -- wipe off lint
-G1 Z10 ; raise extruder
+G1 X155 Y185 F11520 ; move to xy purge location
+G1 Z-2 F1200 ; move to z purge location 
+;M109 R{nozzle_temperature_initial_layer[0]} ; raise nozzle temp to first layer temp 
+;G92 E0.0 ; reset extruder 
+;G1 E-1 F2100 ; small retraction 
+;G92 E0.0 ; reset extruder 
+;M104 S0 ; disable hotend 
+G1 Z2.4 F1200 ; move z to wipe distance 
+G1 X155 Y173 F11520 ; move xy to wipe start location 
+M106 : Set part cooling fan to 100% 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+M107 ; disable part cooling fan 
+G1 Z10 ; raise extruder 
 ;;;;;;;;;;;;; AJE
 G28 X0 Y0 ; home X and Y
 G0 X0 Y187 F200 ; move away from endstops
