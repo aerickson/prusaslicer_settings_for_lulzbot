@@ -80,7 +80,7 @@ G28 X0 Y0 ; home X and Y
 G0 X0 Y187 F200 ; move away from endstops
 M109 R{temperature[0]-70} ; wait for extruder to reach probe temp
 M204 S300 ; set probing acceleration
-G29       ; start auto-leveling sequence
+G29 V4    ; start auto-leveling sequence
 M420 S1   ; enable leveling matrix
 M425 Z	  ; use measured Z backlash for compensation
 M425 Z F0 ; turn off measured Z backlash compensation. (if activated in the quality settings, this command will automatically be ignored)
