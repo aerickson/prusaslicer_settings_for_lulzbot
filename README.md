@@ -10,6 +10,9 @@ I do have a different wiper installed on my Mini
 (https://www.thingiverse.com/thing:1976831), so the note that if you're looking
 to use this.
 
+New wiper that uses Bambu A1 nozzle wiper pads https://us.store.bambulab.com/products/heatbed-nozzle-wiper-a1
+- https://www.printables.com/model/1417879-better-lulzbot-mini-wiper-bracket
+
 ## directions
 
 To install the bed model, follow steps at https://github.com/sn4k3/Ender3.
