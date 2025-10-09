@@ -1,0 +1,92 @@
+;This G-Code has been generated specifically for the LulzBot Mini with standard extruder
+
+;
+; material: print/probe/soften/wipe bed:print/removal
+; abs: 240/170/175/170 110/50
+;
+; prusaslicer only has: [temperature] and [bed_temperature]
+;        [first_layer_temperature] and [first_layer_bed_temperature]
+; 
+; probe: {temperature[0]-70} 
+; soften: {temperature[0]-65}
+; wipe: {temperature[0]-70}
+; removal: {bed_temperature[0]-60}
+
+M73 P0 ; clear GLCD progress bar
+M75 ; Start GLCD Timer
+G26 ; clear potential 'probe fail' condition
+M107 ; disable fans
+M420 S0 ; disable leveling matrix
+G90 ; absolute positioning
+M82 ; set extruder to absolute mode
+G92 E0 ; set extruder position to 0
+M140 S[bed_temperature] ; start bed heating up
+G28 ; home all axes
+G0 X0 Y187 Z156 F200 ; move away from endstops
+M109 R{temperature[0]-65} ;
+G1 E-30 F75 ; retract filament
+M109 R{temperature[0]-70} ; wait for extruder to reach wiping temp
+;;;;;;;;;;;;;;;;; AJE: wipe using lulzbot mini bambu wiper
+G1 X155 Y185 F11520 ; move to xy purge location
+G1 Z-2 F1200 ; move to z purge location 
+G1 Z2.4 F1200 ; move z to wipe distance 
+G1 X155 Y173 F11520 ; move xy to wipe start location 
+M106 : Set part cooling fan to 100% 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F8000 ; wipe left 
+G1 X155 Y173 F8000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+G1 X69 Y173 F11000 ; wipe left 
+G1 X155 Y173 F11000 ; wipe right 
+M107 ; disable part cooling fan 
+G1 Z10 ; raise extruder 
+;;;;;;;;;;;;; AJE
+G28 X0 Y0 ; home X and Y
+G0 X0 Y187 F200 ; move away from endstops
+M109 R{temperature[0]-70} ; wait for extruder to reach probe temp
+M204 S300 ; set probing acceleration
+G29 V4    ; start auto-leveling sequence
+M420 S1   ; enable leveling matrix
+M425 Z	  ; use measured Z backlash for compensation
+M425 Z F0 ; turn off measured Z backlash compensation. (if activated in the quality settings, this command will automatically be ignored)
+M204 S2000 ; restore standard acceleration
+G28 X0 Y0 ; re-home to account for build variance of earlier mini builds
+G0 X0 Y187 F200 ; move away from endstops
+G0 Y152 F4000 ; move in front of wiper pad
+G4 S1 ; pause
+M400 ; wait for moves to finish
+M117 Heating... ; progress indicator message on LCD
+M109 R[first_layer_temperature]  ; wait for extruder to reach printing temp
+M190 R[first_layer_bed_temperature] ; wait for bed to reach printing temp
+G1 Z2 E0 F75 ; prime tiny bit of filament into the nozzle
+M117 Mini Printing... ; progress indicator message on LCD

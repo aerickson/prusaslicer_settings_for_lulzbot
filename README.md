@@ -10,9 +10,25 @@ I do have a different wiper installed on my Mini
 (https://www.thingiverse.com/thing:1976831), so the note that if you're looking
 to use this.
 
+New wiper that uses Bambu A1 nozzle wiper pads https://us.store.bambulab.com/products/heatbed-nozzle-wiper-a1
+- https://www.printables.com/model/1417879-better-lulzbot-mini-wiper-bracket
+  - TODO: update bed STL with new wiper??
+
 ## directions
 
-To install the bed model, follow steps at https://github.com/sn4k3/Ender3.
+To install the bed model:
+
+- Open the settings directory
+
+    - Windows: "%AppData%\PrusaSlicer"
+    - macOS: "/Users/[Username]/Library/Application Support/PrusaSlicer"
+    - Linux:
+        - Stable build: "~/.PrusaSlicer/"
+        - Alpha build: "~/.PrusaSlicer-alpha/"
+
+- Copy GitHub PrusaSlicer subfolders ("printer", "filament", "print") to the folder above
+
+Adapted from the installation steps at https://github.com/sn4k3/Ender3.
 
 ## credits
 
@@ -20,7 +36,9 @@ To install the bed model, follow steps at https://github.com/sn4k3/Ender3.
 
 ## links
 
-- https://github.com/prusa3d/PrusaSlicer/wiki/Slic3r-Prusa-Edition-Macro-Language
-- lulzbot taz prusaslicer configs: https://github.com/realraum/3dprinting
+- prusa slicer macro language reference
+  - https://github.com/prusa3d/PrusaSlicer/wiki/Slic3r-Prusa-Edition-Macro-Language
+- lulzbot taz prusaslicer configs
+  - https://github.com/realraum/3dprinting
 - taz and mini profiles: https://github.com/jjaeggli/prusaslicer-lulzbot-taz
   - has formula-based wipe temperatures
